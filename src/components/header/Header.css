@@ -1,0 +1,93 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+
+* {
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+    list-style-type: none;
+    font-family: "Open Sans", sans-serif;
+}
+
+.headerOuter {
+    font-weight: 600;
+    box-shadow: 0 3px 6px #00000029;
+    position: fixed;
+    top: 0px;
+    background-color: var(--black);
+    padding: 0.8rem;
+    width: 100vw;
+    z-index: 1;
+}
+
+
+.headerOuter .navWrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+.headerOuter .navWrapper .verternalogo {
+    width: 200px;
+    height: auto;
+}
+
+.headerOuter .navWrapper ul {
+    margin-bottom: 0rem;
+}
+
+.headerOuter .navWrapper ul li {
+    display: inline-block;
+    margin: 0px 1rem;
+    font-size: 1.1rem;
+    color: var(--white);
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.headerOuter .navWrapper ul li:hover {
+    color: var(--red);
+    font-weight: 500;
+}
+
+.headerOuter .navWrapper .connectUS {
+    border: none;
+    outline: none;
+    background-color: var(--red);
+    padding: 0.5rem 0.9rem;
+    border-radius: 8px;
+    color: var(--white);
+    font-weight: 500;
+}
+
+.headerOuter .navWrapper .connectUS:hover {
+    background-color: var(--lightpink);
+    color: var(--red);
+    font-weight: 500;
+}
+
+.headerOuter .navWrapper ul li ul {
+    background-color: var(--white);
+    font-weight: 600;
+    border-radius: 8px;
+    padding: 0.8rem;
+    opacity: 1;
+    z-index: 1;
+    visibility: hidden;
+    position: absolute;
+    transform: translateX(-25%, -25%);
+    box-shadow: 0 3px 6px #00000029;
+}
+
+.headerOuter .navWrapper ul li ul li {
+    display: block;
+    color: var(--black);
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+.headerOuter .navWrapper ul li:hover ul {
+    visibility: visible;
+    opacity: 1;
+}
