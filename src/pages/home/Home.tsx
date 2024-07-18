@@ -12,6 +12,7 @@ import AccordionSummary from '@mui/material/AccordionSummary';
 import AccordionDetails from '@mui/material/AccordionDetails';
 import Typography from '@mui/material/Typography';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
+import ExpertTeam from './expertteam/ExpertTeam';
 
 const Home = () => {
     return (
@@ -179,7 +180,7 @@ const Home = () => {
                                         expandIcon={<ExpandMoreIcon />}
                                         aria-controls="panel1-content"
                                         id="panel1-header"
-                                        sx={{ backgroundColor: "#FD3F30", color: "#ffffff",fontWeight:"600" }}
+                                        sx={{ backgroundColor: "#FD3F30", color: "#ffffff", fontWeight: "600" }}
                                     >
                                         <Typography>Expanded by default</Typography>
                                     </AccordionSummary>
@@ -195,7 +196,7 @@ const Home = () => {
                                         expandIcon={<ExpandMoreIcon />}
                                         aria-controls="panel2-content"
                                         id="panel2-header"
-                                        sx={{ backgroundColor: "#FD3F30", color: "#ffffff",fontWeight:"600" }}
+                                        sx={{ backgroundColor: "#FD3F30", color: "#ffffff", fontWeight: "600" }}
                                     >
                                         <Typography>Header</Typography>
                                     </AccordionSummary>
@@ -211,7 +212,7 @@ const Home = () => {
                                         expandIcon={<ExpandMoreIcon />}
                                         aria-controls="panel2-content"
                                         id="panel2-header"
-                                        sx={{ backgroundColor: "#FD3F30", color: "#ffffff",fontWeight:"600" }}
+                                        sx={{ backgroundColor: "#FD3F30", color: "#ffffff", fontWeight: "600" }}
                                     >
                                         <Typography>Header</Typography>
                                     </AccordionSummary>
@@ -227,7 +228,7 @@ const Home = () => {
                                         expandIcon={<ExpandMoreIcon />}
                                         aria-controls="panel2-content"
                                         id="panel2-header"
-                                        sx={{ backgroundColor: "#FD3F30", color: "#ffffff",fontWeight:"600" }}
+                                        sx={{ backgroundColor: "#FD3F30", color: "#ffffff", fontWeight: "600" }}
                                     >
                                         <Typography>Header</Typography>
                                     </AccordionSummary>
@@ -240,6 +241,20 @@ const Home = () => {
                                 </Accordion>
                             </div>
                         </div>
+                    </div>
+                </div>
+            </section>
+
+            <section className='ExpertTeam mb-5'>
+                <div className="container">
+                    <div>
+                        <h2 className='teamHead mb-4'>Meet a Friendly Team</h2>
+                        <p className='teamCotent mb-5'>Cras dictum ut libero non ultricies. Morbi luctus lacus ac finibus porttitor. Cras pellentesque, sapien in rhoncus iaculis, eros nisl elementum ipsum, nec faucibus magna elit at quam.</p>
+                    </div>
+                    <div className="row">
+                        <ExpertTeam />
+                        <ExpertTeam />
+                        <ExpertTeam />
                     </div>
                 </div>
             </section>
