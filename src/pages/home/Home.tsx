@@ -13,6 +13,7 @@ import AccordionDetails from '@mui/material/AccordionDetails';
 import Typography from '@mui/material/Typography';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import ExpertTeam from './expertteam/ExpertTeam';
+import Footer from '../../components/footer/Footer';
 
 const Home = () => {
     return (
@@ -210,8 +211,8 @@ const Home = () => {
                                 <Accordion className='mb-4'>
                                     <AccordionSummary
                                         expandIcon={<ExpandMoreIcon />}
-                                        aria-controls="panel2-content"
-                                        id="panel2-header"
+                                        aria-controls="panel3-content"
+                                        id="panel3-header"
                                         sx={{ backgroundColor: "#FD3F30", color: "#ffffff", fontWeight: "600" }}
                                     >
                                         <Typography>Header</Typography>
@@ -226,8 +227,8 @@ const Home = () => {
                                 <Accordion className='mb-4'>
                                     <AccordionSummary
                                         expandIcon={<ExpandMoreIcon />}
-                                        aria-controls="panel2-content"
-                                        id="panel2-header"
+                                        aria-controls="panel4-content"
+                                        id="panel4-header"
                                         sx={{ backgroundColor: "#FD3F30", color: "#ffffff", fontWeight: "600" }}
                                     >
                                         <Typography>Header</Typography>
@@ -251,15 +252,14 @@ const Home = () => {
                         <h2 className='teamHead mb-4'>Meet a Friendly Team</h2>
                         <p className='teamCotent mb-5'>Cras dictum ut libero non ultricies. Morbi luctus lacus ac finibus porttitor. Cras pellentesque, sapien in rhoncus iaculis, eros nisl elementum ipsum, nec faucibus magna elit at quam.</p>
                     </div>
-                    <div className="row">
-                        <ExpertTeam />
-                        <ExpertTeam />
+                    <div className='row'>
                         <ExpertTeam />
                     </div>
                 </div>
             </section>
+            <Footer />
         </>
     )
-}
+};
 
 export default Home;

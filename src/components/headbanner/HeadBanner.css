@@ -1,0 +1,38 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    list-style-type: none;
+}
+
+.contactForm {
+    background-color: #F2F2EE;
+    font-weight: 600;
+    position: relative;
+    padding: 120px 0px 120px 0px;
+    margin: 5rem 0rem;
+}
+
+.contactForm .helpLineOverlay {
+    background-image: url('../../assets/Images/helplinelogo.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    opacity: 0.05;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    position: absolute;
+    filter: brightness(100%) contrast(100%) saturate(100%) blur(0px) hue-rotate(0deg);
+}
+
+.contactForm .mainBanner {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    margin-bottom: 0rem;
+    font-size: 2.8rem;
+    font-weight: 600;
+    color: var(--red);
+}

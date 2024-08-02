@@ -46,6 +46,12 @@
     cursor: pointer;
 }
 
+.headerOuter .navWrapper .subModule {
+    color: var(--white);
+    font-weight: 600;
+    text-decoration: none;
+}
+
 .headerOuter .navWrapper ul li:hover {
     color: var(--red);
     font-weight: 500;

@@ -246,8 +246,8 @@
     font-size: 1.1rem;
 }
 
-.mainContacthelpline:hover {
-    background-color: #000;
+.animalHelpline .innerBoxWrapper .mainContacthelpline:hover {
+    background-color: var(--black);
     font-weight: 600;
     color: var(--red);
 }
