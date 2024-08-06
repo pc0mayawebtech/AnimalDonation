@@ -15,7 +15,9 @@ const About = () => {
     return (
         <>
             <Header />
-            <HeadBanner value="About us" />
+            <HeadBanner>
+                <h1 className='mainBanner'>About us</h1>
+            </HeadBanner>
 
             <section className='heroBanner mb-5'>
                 <div className="container">

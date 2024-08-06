@@ -27,7 +27,7 @@ export const exportTeam: DataItem[] = [
     {
         id: "4",
         "image": logo,
-        "name": "pawan kumar",
+        "name": "vipul panwar",
         "profile": "Certified Cow Behaviourist",
     },
     {

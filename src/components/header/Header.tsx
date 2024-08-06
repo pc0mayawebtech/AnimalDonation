@@ -9,32 +9,22 @@ const Header = () => {
                 <nav className='container'>
                     <div className="navWrapper">
                         <label>
-                            <img src={logo} alt="logo" className='verternalogo' />
+                            <Link to="/"><img src={logo} alt="logo" className='verternalogo' /></Link>
                         </label>
                         <ul>
                             <li><Link to="/" className='subModule'>Home</Link></li>
                             <li><Link to="/about" className='subModule'>
                                 About
-                                <ul>
-                                    <li>About Us</li>
-                                    <li>Our Team</li>
-                                </ul>
                             </Link>
                             </li>
-                            <li>
-                                Features
+                            <li>Features
                                 <ul>
-                                    <li>Donations</li>
-                                    <li>Adoptation</li>
-                                    <li>Team</li>
+                                    <li><Link to="/adoption" className='innerSubModule'>Adoptions</Link></li>
+                                    <li><Link to="/team" className='innerSubModule'>Team</Link></li>
                                 </ul>
                             </li>
                             <li><Link to="/service" className='subModule'>
                                 Services
-                                <ul>
-                                    <li>Services</li>
-                                    <li>Service Detail</li>
-                                </ul>
                             </Link>
                             </li>
                             <li><Link to="/contact" className='subModule'>Contact</Link></li>

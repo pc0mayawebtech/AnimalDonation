@@ -7,13 +7,9 @@ import { IoCall } from "react-icons/io5";
 import { data } from '../animalrescue';
 import rescuehome from '../../assets/Images/animalhome.png';
 import puupylogo from '../../assets/Images/choosepuppylogo.jpg';
-import Accordion from '@mui/material/Accordion';
-import AccordionSummary from '@mui/material/AccordionSummary';
-import AccordionDetails from '@mui/material/AccordionDetails';
-import Typography from '@mui/material/Typography';
-import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import ExpertTeam from './expertteam/ExpertTeam';
 import Footer from '../../components/footer/Footer';
+import FAQ from '../service/faq/FAQ';
 
 const Home = () => {
     return (
@@ -176,70 +172,7 @@ const Home = () => {
                                 <p className='faqCont mb-5'>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Deleniti facilis sit officia earum illo nostrum veritatis corporis nesciunt eligendi reiciendis id nobis maiores reprehenderit aspernatur.</p>
                             </div>
                             <div>
-                                <Accordion className='mb-4'>
-                                    <AccordionSummary
-                                        expandIcon={<ExpandMoreIcon />}
-                                        aria-controls="panel1-content"
-                                        id="panel1-header"
-                                        sx={{ backgroundColor: "#FD3F30", color: "#ffffff", fontWeight: "600" }}
-                                    >
-                                        <Typography>Expanded by default</Typography>
-                                    </AccordionSummary>
-                                    <AccordionDetails>
-                                        <Typography>
-                                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
-                                            malesuada lacus ex, sit amet blandit leo lobortis eget.
-                                        </Typography>
-                                    </AccordionDetails>
-                                </Accordion>
-                                <Accordion className='mb-4'>
-                                    <AccordionSummary
-                                        expandIcon={<ExpandMoreIcon />}
-                                        aria-controls="panel2-content"
-                                        id="panel2-header"
-                                        sx={{ backgroundColor: "#FD3F30", color: "#ffffff", fontWeight: "600" }}
-                                    >
-                                        <Typography>Header</Typography>
-                                    </AccordionSummary>
-                                    <AccordionDetails>
-                                        <Typography>
-                                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
-                                            malesuada lacus ex, sit amet blandit leo lobortis eget.
-                                        </Typography>
-                                    </AccordionDetails>
-                                </Accordion>
-                                <Accordion className='mb-4'>
-                                    <AccordionSummary
-                                        expandIcon={<ExpandMoreIcon />}
-                                        aria-controls="panel3-content"
-                                        id="panel3-header"
-                                        sx={{ backgroundColor: "#FD3F30", color: "#ffffff", fontWeight: "600" }}
-                                    >
-                                        <Typography>Header</Typography>
-                                    </AccordionSummary>
-                                    <AccordionDetails>
-                                        <Typography>
-                                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
-                                            malesuada lacus ex, sit amet blandit leo lobortis eget.
-                                        </Typography>
-                                    </AccordionDetails>
-                                </Accordion>
-                                <Accordion className='mb-4'>
-                                    <AccordionSummary
-                                        expandIcon={<ExpandMoreIcon />}
-                                        aria-controls="panel4-content"
-                                        id="panel4-header"
-                                        sx={{ backgroundColor: "#FD3F30", color: "#ffffff", fontWeight: "600" }}
-                                    >
-                                        <Typography>Header</Typography>
-                                    </AccordionSummary>
-                                    <AccordionDetails>
-                                        <Typography>
-                                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
-                                            malesuada lacus ex, sit amet blandit leo lobortis eget.
-                                        </Typography>
-                                    </AccordionDetails>
-                                </Accordion>
+                                <FAQ />
                             </div>
                         </div>
                     </div>

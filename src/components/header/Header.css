@@ -52,9 +52,9 @@
     text-decoration: none;
 }
 
-.headerOuter .navWrapper ul li:hover {
+.headerOuter .navWrapper .subModule:hover {
     color: var(--red);
-    font-weight: 500;
+    font-weight: 600;
 }
 
 .headerOuter .navWrapper .connectUS {
@@ -96,4 +96,20 @@
 .headerOuter .navWrapper ul li:hover ul {
     visibility: visible;
     opacity: 1;
+}
+
+.headerOuter .navWrapper ul li ul li:hover {
+    color: var(--red);
+    font-weight: 600;
+}
+
+.headerOuter .navWrapper ul li ul li .innerSubModule{
+  text-decoration: none;
+  color: var(--black);
+  font-weight: 600;
+}
+
+.headerOuter .navWrapper ul li ul li .innerSubModule:hover{
+    color: var(--red);
+    font-weight: 600;
 }

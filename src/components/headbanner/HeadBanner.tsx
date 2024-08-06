@@ -1,20 +1,19 @@
+import { ReactNode } from 'react';
 import './HeadBanner.css';
 
 export interface UserProps {
-    value: string;
+    children?: ReactNode,
 }
 
-const HeadBanner = ({ value }: UserProps) => {
+const HeadBanner = ({ children }: UserProps) => {
     return (
         <section className='contactForm mb-5'>
             <div className='helpLineOverlay'></div>
             <div className="container-fluid">
-                <div>
-                    <h1 className='mainBanner'>{value}</h1>
-                </div>
+                {children}
             </div>
         </section>
     )
 }
 
-export default HeadBanner
+export default HeadBanner;

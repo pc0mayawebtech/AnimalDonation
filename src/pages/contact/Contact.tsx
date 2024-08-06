@@ -7,6 +7,7 @@ import { FaPhoneAlt, FaFacebook, FaLinkedin } from "react-icons/fa";
 import './Contact.css';
 import { useEffect } from 'react';
 import HeadBanner from '../../components/headbanner/HeadBanner';
+import Form from './form/Form';
 
 const Contact = () => {
     useEffect(() => {
@@ -15,7 +16,9 @@ const Contact = () => {
     return (
         <>
             <Header />
-            <HeadBanner value="Contact us" />
+            <HeadBanner>
+                <h1 className='mainBanner'>Contact us</h1>
+            </HeadBanner>
 
             <section className='heroBanner mb-5'>
                 <div className="container-fluid">
@@ -87,37 +90,7 @@ const Contact = () => {
                                 <h2 className='formInnerHead mb-4'>Leave a Message</h2>
                                 <p className='formInnerCont'>Duis lorem tortor, iaculis at dolor ac, lacinia elementum est. Nulla commodo neque id neque tincidunt fringilla vel in ipsum.</p>
                             </div>
-                            <form action="./action.php" method='post'>
-                                <div className="row mb-4">
-                                    <div className="col-lg-6">
-                                        <div className="formWrapper">
-                                            <input type="text" name="name" id="name" placeholder='Enter Name' className='formControl' />
-                                        </div>
-                                    </div>
-                                    <div className="col-lg-6">
-                                        <div className="formWrapper">
-                                            <input type="email" name="email" id="email" placeholder='Enter Email' className='formControl' />
-                                        </div>
-                                    </div>
-                                </div>
-                                <div className="row mb-4">
-                                    <div className="col-lg-12">
-                                        <div className="formWrapper">
-                                            <input type="text" name="subject" id="subject" placeholder='Enter Subject' className='formControl' />
-                                        </div>
-                                    </div>
-                                </div>
-                                <div className="row mb-4">
-                                    <div className="col-lg-12">
-                                        <div className="formWrapper">
-                                            <textarea name="Your Message" id="message" className='formControl' rows={4} cols={4} placeholder='Your Message'></textarea>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div>
-                                    <button type='submit' className='btnSubmit'>Send Message</button>
-                                </div>
-                            </form>
+                            <Form />
                         </div>
                     </div>
                 </div>
