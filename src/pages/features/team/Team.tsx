@@ -20,7 +20,7 @@ const Team = () => {
                         <h2 className='teamInnerHead'>Meet Our Veterna Team</h2>
                         <p className='teamInnerCont mb-5'>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusm tempor incididunt ut labore et dolore magna aliqua. </p>
                     </div>
-                    <div className='row spaceTeam'>
+                    <div className='row spaceTeam mb-2'>
                         <TrainerTeam contactbg='teamPerson' />
                         <TrainerTeam contactbg='teamPerson' />
                         <TrainerTeam contactbg='teamPerson' />
@@ -39,7 +39,7 @@ const Team = () => {
                     <div>
                         <p className='volunteerTitle'>What Our Volunteer Said</p>
                         <h2 className='volunteerHead'>Our Volunteer Said</h2>
-                        <p className='volunteerCont'>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusm tempor incididunt ut labore et dolore magna aliqua.</p>
+                        <p className='volunteerCont mb-5'>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusm tempor incididunt ut labore et dolore magna aliqua.</p>
                     </div>
                     <div>
                         <ExpertTeam />

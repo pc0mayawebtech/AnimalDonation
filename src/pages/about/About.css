@@ -65,3 +65,6 @@
     color: var(--red);
     text-align: center;
 }
+
+/***********MEDIA QUERY SECTION START************/
+@media only screen and (max-width: 600px) {}

@@ -350,3 +350,79 @@
     margin: auto;
     line-height: 1.6;
 }
+
+
+/***********MEDIA QUERY SECTION START**********/
+@media only screen and (max-width: 600px) {
+    .elementor-top-section .heroBannerLogo .innerContentPart .readExtraInfo {
+        width: 100%;
+    }
+
+    .elementor-top-section .heroBannerLogo {
+        padding: 130px 0px 60px 0px;
+    }
+
+    .animalRescuePlan .rescueDescription .trustedWord {
+        font-size: 2rem;
+    }
+
+    .animalHelpline .innerBoxWrapper .infoHeadContact {
+        font-size: 2rem;
+    }
+
+    .animalHelpline .innerBoxWrapper .mainContacthelpline {
+        width: 100%;
+    }
+
+    .whyChooseUs .innerHead {
+        font-size: 2rem;
+    }
+
+    .whyChooseUs .readExtrabtn {
+        width: 100%;
+    }
+
+    .whyChooseUs .outerSpace .innerdescription .descriptionCont {
+        font-size: 1.1rem;
+    }
+}
+
+@media only screen and (min-width: 768px) {
+    .animalRescuePlan .elementoryrescue .innerelementoryrescueWrapper .rescueTitle {
+        font-size: 1.2rem;
+    }
+
+    .animalHelpline .innerBoxWrapper .mainContacthelpline {
+        width: 100%;
+    }
+
+    .whyChooseUs .outerSpace .innerdescription {
+        display: inline-block;
+    }
+
+    .whyChooseUs .outerSpace .innerdescription .checkboxlogo {
+        margin-right: 0.6rem;
+    }
+
+    .whyChooseUs .outerSpace .innerdescription .checkboxlogo {
+        font-size: 1.5rem;
+        font-weight: 700;
+        color: var(--red);
+        margin-top: -2rem;
+        margin-right: 0.6rem;
+    }
+}
+
+@media only screen and (min-width: 992px) {
+    .teamName {
+        font-size: 1.6rem;
+    }
+
+    .animalRescuePlan .elementoryrescue .innerelementoryrescueWrapper .rescueTitle {
+        font-size: 1.1rem;
+    }
+
+    .elementor-top-section .heroBannerLogo .innerContentPart .readExtraInfo {
+        width: 100%;
+    }
+}

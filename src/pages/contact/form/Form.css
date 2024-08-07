@@ -37,3 +37,19 @@
     color: var(--red);
     font-weight: 600;
 }
+
+/************MEDIA QUERY SECTION START*************/
+@media only screen and (max-width: 992px) {
+    .heroBanner .btnSubmit {
+        border: none;
+        outline: none;
+        background-color: var(--red);
+        font-weight: 600;
+        padding: 0.8rem 0.9rem;
+        color: var(--white);
+        border-radius: 15px;
+        font-size: 1rem;
+        width: 100%;
+        margin-bottom: 1rem;
+    }
+}

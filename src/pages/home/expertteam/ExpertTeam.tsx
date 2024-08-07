@@ -17,6 +17,24 @@ const ExpertTeam = () => {
         speed: 2000,
         autoplaySpeed: 2000,
         cssEase: "linear",
+        pauseOnHover: true,
+        responsive: [
+
+            {
+                breakpoint: 600,
+                settings: {
+                    slidesToShow: 1,
+                    slidesToScroll: 1,
+                    initialSlide: 1
+                }
+            },
+            {
+                breakpoint: 480,
+                settings: {
+                    slidesToShow: 1,
+                    slidesToScroll: 1
+                }
+            }]
     };
     return (
         <>
@@ -26,18 +44,20 @@ const ExpertTeam = () => {
                     {
                         exportTeam.map((value, index) => {
                             return (
-                                <div className='col-lg-4 flex-row p-3' key={index}>
+                                <div className='col-lg-4 col-md-12 col-sm-12 col-12 flex-row p-lg-3 p-sm-2' key={index}>
                                     <div className='wrapperLogo'>
                                         <img src={value.image} alt="expertteam" loading='lazy' className='w-100' />
                                     </div>
                                     <div>
-                                        <h4 className='teamName'>{value.name}</h4>
-                                        <p className='teamExpertise'>{value.profile}</p>
-                                    </div>
-                                    <div className='socialMediaHandle'>
-                                        <FaFacebookSquare className='socialmediaPlatform' />
-                                        <FaSquareXTwitter className='socialmediaPlatform' />
-                                        <FaLinkedin className='socialmediaPlatform' />
+                                        <div>
+                                            <h4 className='teamName'>{value.name}</h4>
+                                            <p className='teamExpertise'>{value.profile}</p>
+                                        </div>
+                                        <div className='socialMediaHandle'>
+                                            <FaFacebookSquare className='socialmediaPlatform' />
+                                            <FaSquareXTwitter className='socialmediaPlatform' />
+                                            <FaLinkedin className='socialmediaPlatform' />
+                                        </div>
                                     </div>
                                 </div>
                             )

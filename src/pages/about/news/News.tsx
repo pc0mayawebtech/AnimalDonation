@@ -7,7 +7,7 @@ const News = () => {
             {
                 ReadNews.map((item, index) => {
                     return (
-                        <div className="col-lg-4">
+                        <div className="col-lg-4 mb-5">
                             <section className='readNews'>
                                 <div className="container">
                                     <div className='newsOuterWrapper' key={index}>

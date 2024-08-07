@@ -92,3 +92,10 @@
     width: 100%;
     height: 100vh;
 }
+
+/***********MEDIA QUERY SECTION START************/
+@media only screen and (max-width: 992px) {
+    .contactForm .mainBanner {
+        font-size: 2.5rem !important;
+    }
+}

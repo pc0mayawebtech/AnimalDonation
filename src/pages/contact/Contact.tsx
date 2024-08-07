@@ -29,7 +29,7 @@ const Contact = () => {
                                 <p className='innerCont'>Aenean sollicitudin tempor dui id ultricies. Interdum et malesuada fames ac ante ipsum primis in faucibus. Suspendisse condimentum leo a augue malesuada, quis placerat libero interdum. Sed ultricies maximus nunc, vel vulputate neque suscipit sed.</p>
                             </div>
                             <div className='row mb-2'>
-                                <div className="col-lg-6">
+                                <div className="col-lg-6 mb-2">
                                     <div className='contactScope'>
                                         <span>
                                             <FaLocationDot className='iconSize' />
@@ -40,7 +40,7 @@ const Contact = () => {
                                         </span>
                                     </div>
                                 </div>
-                                <div className="col-lg-6">
+                                <div className="col-lg-6  mb-2">
                                     <div className='contactScope'>
                                         <span>
                                             <IoMdClock className='iconSize' />
@@ -53,7 +53,7 @@ const Contact = () => {
                                 </div>
                             </div>
                             <div className='row mb-4'>
-                                <div className="col-lg-6">
+                                <div className="col-lg-6  mb-2">
                                     <div className='contactScope'>
                                         <span>
                                             <MdEmail className='iconSize' />
@@ -64,7 +64,7 @@ const Contact = () => {
                                         </span>
                                     </div>
                                 </div>
-                                <div className="col-lg-6">
+                                <div className="col-lg-6  mb-2">
                                     <div className='contactScope'>
                                         <span>
                                             <FaPhoneAlt className='iconSize' />
@@ -78,7 +78,7 @@ const Contact = () => {
                             </div>
                             <div>
                                 <h4 className='socialIconHead mb-3'>Social Media :</h4>
-                                <span className='SocialWrapper'>
+                                <span className='SocialWrapper mb-5'>
                                     <FaFacebook className='socialHandleIcon' />
                                     <FaSquareXTwitter className='socialHandleIcon' />
                                     <FaLinkedin className='socialHandleIcon' />

@@ -8,7 +8,7 @@ const PetDetail = () => {
             {
                 petTeam.map((item, index) => {
                     return (
-                        <div className="col-lg-3 col-md-4 col-sm-6 mb-4">
+                        <div className="col-lg-3 mb-4">
                             <div className='boxcardWrapper' key={index}>
                                 <label>
                                     <img src={item.image} alt="petlogo" className='petLogo mb-3' />

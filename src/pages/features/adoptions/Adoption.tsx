@@ -8,6 +8,7 @@ import adoptanimal from '../../../assets/Images/adoptanimal1.png';
 import adoptanima2 from '../../../assets/Images/adoptanimal2.png';
 import adoptanima3 from '../../../assets/Images/adoptanimal3.png';
 import adoptanima4 from '../../../assets/Images/adoptanimal4.png';
+import Footer from '../../../components/footer/Footer';
 
 const Adoption = () => {
     return (
@@ -39,7 +40,7 @@ const Adoption = () => {
                                     <div className="col-lg-6" style={{ marginBottom: "29rem" }}>
                                         <div className='elementWrapper' key={id}>
                                             <div className="backgroundOverlay">
-                                                <div className='InfoWrapper'>
+                                                <div className='InfoWrapper mb-3'>
                                                     <div className='d-flex align-items-center'>
                                                         <FaCalendarAlt className='mx-2' style={{ color: "red" }} />
                                                         <span className='backInfoColor'>{item.date} Months</span>
@@ -65,7 +66,7 @@ const Adoption = () => {
                 </div>
             </section>
 
-            <section className='adoptAnimal mb-5'>
+            <section className='adoptAnimal'>
                 <HeadBanner>
                     <div>
                         <p className='innerAdoptInfo'>How To Adopt</p>
@@ -115,6 +116,7 @@ const Adoption = () => {
 
                 </HeadBanner>
             </section>
+            <Footer />
         </>
     )
 }

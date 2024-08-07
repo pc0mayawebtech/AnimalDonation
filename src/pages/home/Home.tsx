@@ -36,7 +36,7 @@ const Home = () => {
             <section className='animalRescuePlan mb-5'>
                 <div className="container">
                     <div className="row">
-                        <div className="col-lg-6">
+                        <div className="col-lg-6 order-lg-1 order-2">
                             <div className='rescueDescription'>
                                 <p className='aboutInfo'>About Veterna</p>
                                 <h2 className='trustedWord mb-4'>We're The World's Most Trusted Animal Rescue</h2>
@@ -44,7 +44,7 @@ const Home = () => {
                             </div>
                             <div>
                                 <div className="row mb-5">
-                                    <div className="col-lg-6">
+                                    <div className="col-lg-6 col-md-6 col-sm-6 col-6">
                                         <ul className='elementoryrescue'>
                                             {
                                                 data.slice(0, 5).map((item, id) => {
@@ -60,7 +60,7 @@ const Home = () => {
                                             }
                                         </ul>
                                     </div>
-                                    <div className="col-lg-6">
+                                    <div className="col-lg-6 col-md-6 col-sm-6 col-6">
                                         <ul className='elementoryrescue'>
                                             {
                                                 data.slice(5, 10).map((item, id) => {
@@ -82,7 +82,7 @@ const Home = () => {
                             </div>
                             <div>
                                 <div className="row">
-                                    <div className="col-lg-7">
+                                    <div className="col-lg-7 col-md-7 col-sm-12 col-12">
                                         <div className='successRate'>
                                             <div className='fun-fact-inner'>
                                                 <img src={rescuehome} alt="rescuehome" loading='lazy' className='animalresuceHome' />
@@ -100,7 +100,7 @@ const Home = () => {
                                 </div>
                             </div>
                         </div>
-                        <div className="col-lg-6">
+                        <div className="col-lg-6 order-lg-2 order-1 mb-4">
                             <div>
                                 <img src={rescuelogo} alt="animalrescuelogo" loading='lazy' className='animalrescueRightLogo' />
                             </div>
@@ -126,7 +126,7 @@ const Home = () => {
                     <div className="row">
                         <div className="col-lg-6">
                             <div>
-                                <img src={puupylogo} alt="dogcatlogo" loading='lazy' className='chooseuspuupy' />
+                                <img src={puupylogo} alt="dogcatlogo" loading='lazy' className='chooseuspuupy mb-4' />
                             </div>
                         </div>
                         <div className="col-lg-6">

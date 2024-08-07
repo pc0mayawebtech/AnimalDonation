@@ -159,3 +159,18 @@
     font-weight: 600;
     color: var(--grey);
 }
+
+/**********MEDIA QUERY SECTION START************/
+@media only screen and (max-width: 992px) {
+    .Adoption .outerTextWrapper .innerBoxCont {
+        width: auto;
+    }
+
+    .birdPet .elementWrapper .backgroundOverlay .innerSubInfoWrapper .wrapperContent {
+        text-align: end;
+    }
+
+    .birdPet .elementWrapper .backgroundOverlay .InfoWrapper {
+        gap: 0.4rem;
+    }
+}

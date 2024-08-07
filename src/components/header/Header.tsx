@@ -1,8 +1,15 @@
 import './Header.css';
+import { useRef } from 'react';
 import logo from '../../assets/Images/animalveternalogo.png';
 import { Link } from 'react-router-dom';
+import { GiHamburgerMenu } from "react-icons/gi";
+import { RxCross1 } from "react-icons/rx";
 
 const Header = () => {
+    const navRef = useRef<HTMLUListElement>(null);
+    const showNavbar = () => {
+        navRef.current && navRef.current.classList.toggle("showNav");
+    }
     return (
         <section>
             <header className='headerOuter'>
@@ -11,7 +18,7 @@ const Header = () => {
                         <label>
                             <Link to="/"><img src={logo} alt="logo" className='verternalogo' /></Link>
                         </label>
-                        <ul>
+                        <ul ref={navRef}>
                             <li><Link to="/" className='subModule'>Home</Link></li>
                             <li><Link to="/about" className='subModule'>
                                 About
@@ -28,7 +35,13 @@ const Header = () => {
                             </Link>
                             </li>
                             <li><Link to="/contact" className='subModule'>Contact</Link></li>
+                            <label className='iconCross' onClick={showNavbar}>
+                                <RxCross1 />
+                            </label>
                         </ul>
+                        <label className='menuBurger' onClick={showNavbar}>
+                            <GiHamburgerMenu />
+                        </label>
                         <button type="button" className='connectUS'>Connect with us</button>
                     </div>
                 </nav>

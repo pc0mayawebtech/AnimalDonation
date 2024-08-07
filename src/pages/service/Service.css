@@ -61,6 +61,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
+    flex-wrap: wrap;
 }
 
 .petSupport .premiumInsurance .innerBoxWrapper {
@@ -98,4 +99,17 @@
     background-color: var(--lightpink);
     color: var(--red);
     font-weight: 500;
+}
+
+
+/***********MEDIA QUERY SECTION START***************/
+@media only screen and (max-width: 992px) {
+    .petSupport .premiumInsurance .innerBoxWrapper .innerHead {
+        font-size: 1.5rem;
+        margin-bottom: 0.5rem;
+    }
+
+    .petSupport .premiumInsurance .innerBoxWrapper {
+        margin-bottom: 1.4rem;
+    }
 }

@@ -8,7 +8,7 @@ export interface UserProps {
 const TrainerTeam = ({ contactbg }: UserProps) => {
     return (
         <>
-            <div className="col-lg-4">
+            <div className="col-lg-4 mb-5">
                 <div className='contactWay'>
                     <div className={contactbg}>
                         <div className='reachUs'>

@@ -45,13 +45,13 @@ const Form = () => {
         <>
             <form action="./action.php" method='post' onSubmit={handleSubmit}>
                 <div className="row mb-4">
-                    <div className="col-lg-6">
+                    <div className="col-lg-6 mb-4">
                         <div className="formWrapper">
                             <input type="text" name="name" value={values.name} id="name" placeholder='Enter Name' className='formControl' onChange={handleChange} onBlur={handleBlur} />
                             {errors.name && touched.name ? (<p className='formError'>{errors.name}</p>) : null}
                         </div>
                     </div>
-                    <div className="col-lg-6">
+                    <div className="col-lg-6 mb-0">
                         <div className="formWrapper">
                             <input type="email" name="email" value={values.email} id="email" placeholder='Enter Email' className='formControl' onChange={handleChange} onBlur={handleBlur} />
                             {errors.email && touched.email ? (<p className='formError'>{errors.email}</p>) : null}
