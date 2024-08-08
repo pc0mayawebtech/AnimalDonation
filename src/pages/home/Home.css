@@ -385,6 +385,18 @@
     .whyChooseUs .outerSpace .innerdescription .descriptionCont {
         font-size: 1.1rem;
     }
+
+    .animalRescuePlan .elementoryrescue .innerelementoryrescueWrapper .rescueTitle {
+        font-size: 0.9rem;
+    }
+
+    .animalRescuePlan .successRate .contentbox .number-wrapper {
+        font-size: 2rem;
+    }
+
+    .animalRescuePlan .successRate .animalresuceHome {
+        width: 20%;
+    }
 }
 
 @media only screen and (min-width: 768px) {
@@ -393,7 +405,7 @@
     }
 
     .animalHelpline .innerBoxWrapper .mainContacthelpline {
-        width: 100%;
+        width: auto;
     }
 
     .whyChooseUs .outerSpace .innerdescription {
@@ -423,6 +435,6 @@
     }
 
     .elementor-top-section .heroBannerLogo .innerContentPart .readExtraInfo {
-        width: 100%;
+        width: auto;
     }
 }

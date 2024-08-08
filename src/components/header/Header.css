@@ -1,5 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
 
+:root {
+    --black: #000000;
+    --white: #ffffff;
+    --red: #ff0000;
+    --lightpink: #ffcccb;
+}
+
 * {
     padding: 0px;
     margin: 0px;
@@ -18,7 +25,6 @@
     width: 100vw;
     z-index: 1;
 }
-
 
 .headerOuter .navWrapper {
     display: flex;
@@ -122,6 +128,10 @@
     font-weight: 600;
 }
 
+.headerOuter .navWrapper .features .mobilePurpose {
+    display: none;
+}
+
 /***********MEDIA QUERY SECTION START************/
 @media (max-width: 992px) {
     .headerOuter .navWrapper ul {
@@ -169,6 +179,37 @@
         display: block;
         font-size: 1.4rem;
         color: var(--white);
+        font-weight: 600;
+    }
+
+    .headerOuter .navWrapper .features .mobilePurpose {
+        display: block;
+        background-color: var(--white);
+        font-weight: 600;
+        border-radius: 8px;
+        padding: 0.8rem;
+        opacity: 1;
+        z-index: 1;
+        width: 50%;
+        margin: -1rem auto;
+        box-shadow: 0 3px 6px #00000029;
+    }
+
+    .headerOuter .navWrapper .features .mobilePurpose li {
+        display: block;
+        color: var(--black);
+        font-weight: 600;
+        line-height: 40px !important;
+    }
+
+    .headerOuter .navWrapper .features .mobilePurpose li .mobileSubModule {
+        color: var(--black);
+        font-weight: 600;
+        text-decoration: none;
+    }
+
+    .headerOuter .navWrapper .features .mobilePurpose li .mobileSubModule:hover {
+        color: var(--red);
         font-weight: 600;
     }
 }
