@@ -1,0 +1,440 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    list-style-type: none;
+    font-family: "Open Sans", sans-serif;
+}
+
+.elementor-top-section .heroBannerLogo {
+    background: url('../../assets/Images/herobannerlogo.jpg');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100%;
+    width: 100%;
+    position: relative;
+    padding: 200px 0px 200px 0px;
+    filter: brightness(100%) contrast(90%) saturate(60%) blur(0px) hue-rotate(0deg);
+}
+
+.elementor-top-section .heroBannerLogo .innerContentPart {
+    position: relative;
+    z-index: 9999;
+}
+
+.elementor-top-section .heroBannerLogo .innerContentPart .welcomePhrase {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: var(--white);
+}
+
+.elementor-top-section .heroBannerLogo .innerContentPart .petBehaviour {
+    font-size: 3.6rem;
+    line-height: 1.1;
+    font-weight: 700;
+    color: var(--white);
+    margin-bottom: 1rem;
+}
+
+.elementor-top-section .heroBannerLogo .innerContentPart .innerPetBehaviour {
+    font-weight: bolder;
+    color: var(--red);
+    font-weight: 700;
+    cursor: pointer;
+    margin-bottom: 1.5rem;
+}
+
+.elementor-top-section .heroBannerLogo .innerContentPart .innerPetBehaviour:hover {
+    color: var(--black);
+    font-weight: 700;
+}
+
+.elementor-top-section .heroBannerLogo .innerContentPart .aboutAnimalInfo {
+    font-weight: 700;
+    color: var(--white);
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+}
+
+.elementor-top-section .heroBannerLogo .innerContentPart .readExtraInfo {
+    border: none;
+    outline: none;
+    background-color: var(--red);
+    font-weight: 700;
+    border-radius: 10px;
+    padding: 0.8rem 1rem;
+    color: var(--white);
+    font-size: 1.1rem;
+    width: 25%;
+}
+
+.elementor-top-section .heroBannerLogo .innerContentPart .readExtraInfo:hover {
+    background-color: var(--lightpink);
+    color: var(--red);
+    font-weight: 600;
+    transition: all .5s ease-in-out;
+    cursor: pointer;
+}
+
+
+/************ANIMAL RESCUE SECTION START**************/
+.animalRescuePlan .rescueDescription .aboutInfo {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: var(--red);
+}
+
+.animalRescuePlan .rescueDescription .trustedWord {
+    font-size: 3rem;
+    line-height: 1.2;
+    font-weight: 700;
+    color: var(--black);
+    margin-bottom: 1rem;
+}
+
+.animalRescuePlan .rescueDescription .briefAbtInfo {
+    font-size: 1.05rem;
+    font-weight: 400;
+    width: 100%;
+    line-height: 1.5;
+}
+
+.animalRescuePlan .elementoryrescue {
+    padding-left: 0rem;
+}
+
+.animalRescuePlan .elementoryrescue .innerelementoryrescueWrapper {
+    display: flex;
+    align-items: center;
+    margin-bottom: 0.6rem;
+}
+
+.animalRescuePlan .elementoryrescue .innerelementoryrescueWrapper .checkMark {
+    font-size: 1rem;
+    color: var(--red);
+    font-weight: 600;
+    margin-right: 0.9rem;
+}
+
+.animalRescuePlan .elementoryrescue .innerelementoryrescueWrapper .rescueTitle {
+    font-size: 1.1rem;
+    color: var(--black);
+    font-weight: 400;
+}
+
+.animalRescuePlan .successRate {
+    background-color: var(--white);
+    font-weight: 700;
+    box-shadow: 0 3px 6px #00000029;
+    padding: 1rem;
+    border-radius: 15px;
+}
+
+.animalRescuePlan .successRate:hover {
+    transform: scale(1.05);
+    transition: all .5s ease-in-out;
+}
+
+.animalRescuePlan .successRate .fun-fact-inner {
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-box-align: center;
+    position: relative;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.animalRescuePlan .successRate .animalresuceHome {
+    width: 30%;
+}
+
+.animalRescuePlan .successRate .contentbox .number-wrapper {
+    font-size: 2.4rem;
+    font-weight: 600;
+    color: var(--black);
+    display: flex;
+    align-items: center;
+}
+
+.animalRescuePlan .successRate .contentbox .number-wrapper .incremnetRescue {
+    font-size: 2rem;
+    font-weight: 600;
+    color: var(--red);
+    font-weight: 700;
+}
+
+.animalRescuePlan .successRate .contentbox .contentTitle {
+    color: var(--grey);
+    font-weight: 600;
+    font-size: 1rem;
+}
+
+.animalRescuePlan .animalrescueRightLogo {
+    width: 100%;
+    border-radius: 20px;
+}
+
+/************HELPLINE NUMBER SECTION START************/
+.animalHelpline {
+    background-color: #F2F2EE;
+    font-weight: 600;
+    position: relative;
+    padding: 120px 0px 120px 0px;
+}
+
+.animalHelpline .helpLineoverlay {
+    background: url('../../assets/Images/helplinelogo.png');
+    background-position: bottom center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    opacity: 0.05;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    position: absolute;
+    filter: brightness(100%) contrast(100%) saturate(100%) blur(0px) hue-rotate(0deg);
+}
+
+.animalHelpline .helpLineoverlay .innerBoxWrapper {
+    position: absolute;
+    top: 0%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.animalHelpline .innerBoxWrapper .infoCare {
+    text-align: center;
+    font-weight: 700;
+    color: var(--red);
+    font-size: 1.4rem;
+}
+
+.animalHelpline .innerBoxWrapper .infoHeadContact {
+    text-align: center;
+    font-weight: 700;
+    color: var(--black);
+    font-size: 2.8rem;
+}
+
+.animalHelpline .innerBoxWrapper .infoabtrecoveranimal {
+    text-align: center;
+    font-weight: 500;
+    color: var(--grey);
+    font-size: 1rem;
+    max-width: 500px;
+    margin: auto;
+}
+
+.animalHelpline .innerBoxWrapper .mainContacthelpline {
+    border: none;
+    outline: none;
+    background-color: var(--red);
+    font-weight: 700;
+    padding: 1rem 1rem;
+    border-radius: 10px;
+    color: var(--white);
+    width: 25%;
+    margin: auto;
+    display: block;
+    font-size: 1.1rem;
+}
+
+.animalHelpline .innerBoxWrapper .mainContacthelpline:hover {
+    background-color: var(--black);
+    font-weight: 600;
+    color: var(--red);
+}
+
+.callIcon {
+    color: var(--white);
+    font-weight: 700;
+    font-size: 1.2rem;
+    margin-right: 0.5rem;
+}
+
+/*************WHY CHOOSE SECTION START*************/
+.whyChooseUs .chooseuspuupy {
+    width: 100%;
+    height: 100%;
+    border-radius: 20px;
+}
+
+.whyChooseUs .innerHead {
+    font-size: 2.8rem;
+    color: var(--red);
+    font-weight: 700;
+}
+
+.whyChooseUs .innerCont {
+    font-size: 1.1rem;
+    color: var(--grey);
+    font-weight: 500;
+}
+
+.whyChooseUs .outerSpace {
+    padding: 0rem;
+}
+
+.whyChooseUs .outerSpace .innerdescription {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.whyChooseUs .outerSpace .innerdescription .checkboxlogo {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--red);
+    margin-top: -2rem;
+}
+
+.whyChooseUs .outerSpace .innerdescription .descriptionCont {
+    font-size: 1.5rem;
+    font-weight: 500;
+    line-height: 1.5;
+}
+
+.whyChooseUs .readExtrabtn {
+    border: none;
+    outline: none;
+    padding: 1rem 1rem;
+    background-color: var(--red);
+    color: var(--white);
+    font-weight: 700;
+    font-size: 1.1rem;
+    border-radius: 10px;
+    width: 30%;
+}
+
+.whyChooseUs .readExtrabtn:hover {
+    background-color: var(--lightpink);
+    font-weight: 600;
+    color: var(--red);
+}
+
+/**************ACCORDIAN SECTION START*****************/
+.accordian .faqTitle {
+    font-size: 2.8rem;
+    font-weight: 700;
+    line-height: 1.3;
+    color: var(--red);
+}
+
+.accordian .faqCont {
+    font-weight: 500;
+    color: var(--grey);
+    font-size: 1rem;
+}
+
+/***************EXPERT TEAM SECTION START****************/
+.ExpertTeam .teamHead {
+    font-size: 2.8rem;
+    font-weight: 700;
+    color: var(--red);
+    text-align: center;
+}
+
+.ExpertTeam .teamCotent {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--grey);
+    text-align: center;
+    max-width: 800px;
+    margin: auto;
+    line-height: 1.6;
+}
+
+
+/***********MEDIA QUERY SECTION START**********/
+@media only screen and (max-width: 600px) {
+    .elementor-top-section .heroBannerLogo .innerContentPart .readExtraInfo {
+        width: 100%;
+    }
+
+    .elementor-top-section .heroBannerLogo {
+        padding: 130px 0px 60px 0px;
+    }
+
+    .animalRescuePlan .rescueDescription .trustedWord {
+        font-size: 2rem;
+    }
+
+    .animalHelpline .innerBoxWrapper .infoHeadContact {
+        font-size: 2rem;
+    }
+
+    .animalHelpline .innerBoxWrapper .mainContacthelpline {
+        width: 100%;
+    }
+
+    .whyChooseUs .innerHead {
+        font-size: 2rem;
+    }
+
+    .whyChooseUs .readExtrabtn {
+        width: 100%;
+    }
+
+    .whyChooseUs .outerSpace .innerdescription .descriptionCont {
+        font-size: 1.1rem;
+    }
+
+    .animalRescuePlan .elementoryrescue .innerelementoryrescueWrapper .rescueTitle {
+        font-size: 0.9rem;
+    }
+
+    .animalRescuePlan .successRate .contentbox .number-wrapper {
+        font-size: 2rem;
+    }
+
+    .animalRescuePlan .successRate .animalresuceHome {
+        width: 20%;
+    }
+}
+
+@media only screen and (min-width: 768px) {
+    .animalRescuePlan .elementoryrescue .innerelementoryrescueWrapper .rescueTitle {
+        font-size: 1.2rem;
+    }
+
+    .animalHelpline .innerBoxWrapper .mainContacthelpline {
+        width: auto;
+    }
+
+    .whyChooseUs .outerSpace .innerdescription {
+        display: inline-block;
+    }
+
+    .whyChooseUs .outerSpace .innerdescription .checkboxlogo {
+        margin-right: 0.6rem;
+    }
+
+    .whyChooseUs .outerSpace .innerdescription .checkboxlogo {
+        font-size: 1.5rem;
+        font-weight: 700;
+        color: var(--red);
+        margin-top: -2rem;
+        margin-right: 0.6rem;
+    }
+}
+
+@media only screen and (min-width: 992px) {
+    .teamName {
+        font-size: 1.6rem;
+    }
+
+    .animalRescuePlan .elementoryrescue .innerelementoryrescueWrapper .rescueTitle {
+        font-size: 1.1rem;
+    }
+
+    .elementor-top-section .heroBannerLogo .innerContentPart .readExtraInfo {
+        width: auto;
+    }
+}

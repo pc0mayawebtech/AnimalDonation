@@ -1,0 +1,215 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+
+:root {
+    --black: #000000;
+    --white: #ffffff;
+    --red: #ff0000;
+    --lightpink: #ffcccb;
+}
+
+* {
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+    list-style-type: none;
+    font-family: "Open Sans", sans-serif;
+}
+
+.headerOuter {
+    font-weight: 600;
+    box-shadow: 0 3px 6px #00000029;
+    position: fixed;
+    top: 0px;
+    background-color: var(--black);
+    padding: 0.8rem;
+    width: 100vw;
+    z-index: 1;
+}
+
+.headerOuter .navWrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+.headerOuter .navWrapper .menuBurger {
+    display: none;
+}
+
+.headerOuter .navWrapper ul .iconCross {
+    display: none;
+}
+
+.headerOuter .navWrapper .verternalogo {
+    width: 200px;
+    height: auto;
+}
+
+.headerOuter .navWrapper ul {
+    margin-bottom: 0rem;
+}
+
+.headerOuter .navWrapper ul li {
+    display: inline-block;
+    margin: 0px 1rem;
+    font-size: 1.1rem;
+    color: var(--white);
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.headerOuter .navWrapper .subModule {
+    color: var(--white);
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.headerOuter .navWrapper .subModule:hover {
+    color: var(--red);
+    font-weight: 600;
+}
+
+.headerOuter .navWrapper .connectUS {
+    border: none;
+    outline: none;
+    background-color: var(--red);
+    padding: 0.5rem 0.9rem;
+    border-radius: 8px;
+    color: var(--white);
+    font-weight: 500;
+}
+
+.headerOuter .navWrapper .connectUS:hover {
+    background-color: var(--lightpink);
+    color: var(--red);
+    font-weight: 500;
+}
+
+.headerOuter .navWrapper ul li ul {
+    background-color: var(--white);
+    font-weight: 600;
+    border-radius: 8px;
+    padding: 0.8rem;
+    opacity: 1;
+    z-index: 1;
+    visibility: hidden;
+    position: absolute;
+    transform: translateX(-25%, -25%);
+    box-shadow: 0 3px 6px #00000029;
+}
+
+.headerOuter .navWrapper ul li ul li {
+    display: block;
+    color: var(--black);
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+.headerOuter .navWrapper ul li:hover ul {
+    visibility: visible;
+    opacity: 1;
+}
+
+.headerOuter .navWrapper ul li ul li:hover {
+    color: var(--red);
+    font-weight: 600;
+}
+
+.headerOuter .navWrapper ul li ul li .innerSubModule {
+    text-decoration: none;
+    color: var(--black);
+    font-weight: 600;
+}
+
+.headerOuter .navWrapper ul li ul li .innerSubModule:hover {
+    color: var(--red);
+    font-weight: 600;
+}
+
+.headerOuter .navWrapper .features .mobilePurpose {
+    display: none;
+}
+
+/***********MEDIA QUERY SECTION START************/
+@media (max-width: 992px) {
+    .headerOuter .navWrapper ul {
+        position: fixed;
+        width: 100%;
+        height: 100%;
+        background-color: var(--red);
+        top: 0px;
+        bottom: 0px;
+        left: -100%;
+        text-align: center;
+        transition: all .5s;
+        padding-top: 50px;
+    }
+
+    .headerOuter .navWrapper ul li {
+        display: block !important;
+        line-height: 70px !important;
+    }
+
+    .headerOuter .navWrapper ul.showNav {
+        left: 0% !important;
+    }
+
+    .headerOuter .navWrapper ul .iconCross {
+        display: block;
+        color: var(--white);
+        font-weight: 700;
+        font-size: 1.4rem;
+        position: absolute;
+        top: 0.5rem;
+        right: 1.5rem;
+    }
+
+    .headerOuter .navWrapper .verternalogo {
+        width: 150px;
+        height: auto;
+    }
+
+    .headerOuter .navWrapper .connectUS {
+        display: none;
+    }
+
+    .headerOuter .navWrapper .menuBurger {
+        display: block;
+        font-size: 1.4rem;
+        color: var(--white);
+        font-weight: 600;
+    }
+
+    .headerOuter .navWrapper .features .mobilePurpose {
+        display: block;
+        background-color: var(--white);
+        font-weight: 600;
+        border-radius: 8px;
+        padding: 0.8rem;
+        opacity: 1;
+        z-index: 1;
+        width: 50%;
+        margin: -1rem auto;
+        box-shadow: 0 3px 6px #00000029;
+    }
+
+    .headerOuter .navWrapper .features .mobilePurpose li {
+        display: block;
+        color: var(--black);
+        font-weight: 600;
+        line-height: 40px !important;
+    }
+
+    .headerOuter .navWrapper .features .mobilePurpose li .mobileSubModule {
+        color: var(--black);
+        font-weight: 600;
+        text-decoration: none;
+    }
+
+    .headerOuter .navWrapper .features .mobilePurpose li .mobileSubModule:hover {
+        color: var(--red);
+        font-weight: 600;
+    }
+}
