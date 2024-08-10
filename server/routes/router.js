@@ -5,6 +5,8 @@ const router = express.Router();
 
 router.use(express.json());
 
+// contact form post API
+
 router.post('/contact', async (req, res) => {
     const { name, email, subject, yourMessage } = req.body;
 
@@ -23,4 +25,10 @@ router.post('/contact', async (req, res) => {
     }
 
 });
+
+// login API
+router.post('/login', async (req, res) => {
+    const { email, password } = req.body;
+    console.log('login request body', req.body);
+})
 export default router;

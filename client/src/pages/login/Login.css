@@ -1,0 +1,99 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    list-style-type: none;
+}
+
+.login .outerWrapper {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: 100%;
+    box-shadow: 0 3px 6px #ddd;
+    background-color: #ffffff;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.login .outerWrapper .logo {
+    width: 100%;
+    height: auto;
+}
+
+.login .outerWrapper .formOuterWrapper {
+    width: 100%;
+    height: auto;
+    padding: 5rem
+}
+
+
+.login .outerWrapper .formOuterWrapper .formTitle {
+    color: var(--red);
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+}
+
+.login .outerWrapper .formOuterWrapper .formWrapper .labelControl {
+    display: block;
+    width: 100%;
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+}
+
+.login .outerWrapper .formOuterWrapper .formWrapper .formControl {
+    width: 100%;
+    border: none;
+    outline: none;
+    padding: 0.7rem 0.9rem;
+    border-radius: 8px;
+    box-shadow: 0 3px 6px #ddd;
+    border: 1px solid #ddd;
+    margin-bottom: 0.2rem;
+}
+
+.login .outerWrapper .formOuterWrapper .forgetpass {
+    font-size: 0.9rem;
+    font-weight: 500;
+    cursor: pointer;
+    margin-bottom: 2rem;
+}
+
+.login .outerWrapper .formOuterWrapper .forgetpass:hover {
+    color: var(--red);
+    font-weight: 500;
+}
+
+.formOuterWrapper .btnSubmit {
+    border: none;
+    outline: none;
+    padding: 0.5rem 0.9rem;
+    border: 1px solid #ddd;
+    box-shadow: 0 3px 6px #ddd;
+    border-radius: 8px;
+    font-weight: 600;
+    width: 40%;
+}
+
+.formOuterWrapper .btnSubmit:hover {
+    background-color: var(--red);
+    font-weight: 600;
+    color: var(--white);
+    height: auto;
+    transition: all .5s ease-in-out;
+}
+
+
+/**************MEDIA QUERY SECTION START***********/
+@media (max-width:991px) {
+    .login .outerWrapper {
+        overflow-y: auto;
+    }
+
+    .formOuterWrapper .btnSubmit {
+        width: 100%;
+    }
+}
