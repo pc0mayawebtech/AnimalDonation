@@ -30,7 +30,6 @@ const Form = () => {
         validationSchema: signUpSchema,
         onSubmit: async (values, { resetForm }) => {
             try {
-                // API call to send the form data
                 const response = await axios.post('http://localhost:8000/contact', {
                     name: values.name,
                     email: values.email,
@@ -40,14 +39,14 @@ const Form = () => {
                     headers: {
                         'Content-Type': 'application/json',
                     }
-                }); 
+                });
                 console.log(response.data);
                 notifySuccess();
                 resetForm();
             } catch (error) {
                 console.log("error in submiting", error);
-
                 notifyError();
+                resetForm();
             }
         },
     });

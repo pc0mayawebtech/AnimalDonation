@@ -1,0 +1,19 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    list-style-type: none;
+}
+
+.mainHeadTitle {
+    font-size: 2rem;
+    color: var(--red);
+    font-weight: 700;
+    margin-bottom: 1.3rem;
+}
+
+.textValue {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--grey);
+}

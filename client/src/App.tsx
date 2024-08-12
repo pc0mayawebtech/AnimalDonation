@@ -7,6 +7,8 @@ import Service from './pages/service/Service';
 import Adoption from './pages/features/adoptions/Adoption';
 import Team from './pages/features/team/Team';
 import Login from './pages/login/Login';
+import Dashboard from './pages/dashboard/DashBoard';
+import Description from './pages/dashboard/description/Description';
 
 const App = () => {
   return (
@@ -20,6 +22,8 @@ const App = () => {
           <Route path='/adoption' element={<Adoption />} />
           <Route path='/team' element={<Team />} />
           <Route path='/login' element={<Login />} />
+          <Route path='/dashboard' element={<Dashboard />} />
+          <Route path="/description" element={<Description />} />
         </Routes>
       </div>
     </>

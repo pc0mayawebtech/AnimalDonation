@@ -31,4 +31,15 @@ router.post('/login', async (req, res) => {
     const { email, password } = req.body;
     console.log('login request body', req.body);
 })
+
+//dashboard API
+router.get('/dashboard', async (req, res) => {
+    try {
+        const users = await userdb.find();
+        return res.status(200).json({ status: 200, users });
+    } catch (error) {
+        console.log("dashboard error", error);
+        return res.status(500).json({ error: "Internal server error" });
+    }
+});
 export default router;

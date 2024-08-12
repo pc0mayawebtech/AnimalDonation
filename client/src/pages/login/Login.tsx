@@ -31,11 +31,11 @@ const Login = () => {
             autoClose: 5000,
             pauseOnHover: true,
         });
-        const errorNotify = () => toast.error('something is wrong', {
-            position: "top-right",
-            autoClose: 5000,
-            pauseOnHover: true,
-        });
+        // const errorNotify = () => toast.error('something is wrong', {
+        //     position: "top-right",
+        //     autoClose: 5000,
+        //     pauseOnHover: true,
+        // });
         e.preventDefault();
         const { email, password } = inputval;
         const errors = {
@@ -75,7 +75,7 @@ const Login = () => {
                 },
             });
         } else {
-            errorNotify();
+            // errorNotify();
             setInputVal((preValue) => {
                 return {
                     ...preValue,
