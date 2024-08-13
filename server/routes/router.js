@@ -1,5 +1,6 @@
 import express from 'express';
 import userdb from '../models/userSchema.js';
+import jwt from 'jsonwebtoken';
 
 const router = express.Router();
 
@@ -27,10 +28,20 @@ router.post('/contact', async (req, res) => {
 });
 
 // login API
-router.post('/login', async (req, res) => {
+router.post('/login', (req, res) => {
     const { email, password } = req.body;
     console.log('login request body', req.body);
-})
+
+    if (!email || !password) {
+        return res.status(400).send({ error: "Please fill in all fields." });
+    }
+    else if (email === "admin@gmail.com" && password === "admin@123") {
+        const token = jwt.sign({ email, password }, 'pawan30');
+        const response = res.status(200).json([{ msg: "user successful create", token },{status:200}]);
+        console.log('token', response);
+        return response;
+    }
+});
 
 //dashboard API
 router.get('/dashboard', async (req, res) => {

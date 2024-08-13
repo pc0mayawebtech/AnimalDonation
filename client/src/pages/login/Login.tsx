@@ -3,8 +3,10 @@ import loginlogo from '../../assets/Images/loginlogo.jpg';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { useState } from 'react';
-
+import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
 const Login = () => {
+    const navigate = useNavigate();
     const [inputval, setInputVal] = useState({
         email: "",
         password: "",
@@ -25,17 +27,17 @@ const Login = () => {
         });
     }
 
-    const handleSubmit = (e: { preventDefault: () => void; }) => {
+    const handleSubmit = async (e: { preventDefault: () => void; }) => {
         const notify = () => toast.success('Login is successfull', {
             position: "top-right",
             autoClose: 5000,
             pauseOnHover: true,
         });
-        // const errorNotify = () => toast.error('something is wrong', {
-        //     position: "top-right",
-        //     autoClose: 5000,
-        //     pauseOnHover: true,
-        // });
+        const errorNotify = () => toast.error('something is wrong', {
+            position: "top-right",
+            autoClose: 5000,
+            pauseOnHover: true,
+        });
         e.preventDefault();
         const { email, password } = inputval;
         const errors = {
@@ -64,18 +66,33 @@ const Login = () => {
         }
 
         if (hasErrors) {
-            console.log("Form is submitted...");
-            notify();
-            setInputVal({
-                email: "",
-                password: "",
-                error: {
+            try {
+                const response = await axios.post('http://localhost:8000/login', {
+                    email: inputval.email,
+                    password: inputval.password,
+                }, {
+                    headers: {
+                        'Content-Type': 'application/json',
+                    }
+                });
+                console.log('logindata', response.data[0].token);
+                notify();
+                navigate('/dashboard', { replace: true });
+                localStorage.setItem('token', response.data[0].token);
+            } catch (error) {
+                console.log("error in login", error);
+                errorNotify();
+                setInputVal({
                     email: "",
                     password: "",
-                },
-            });
+                    error: {
+                        email: "",
+                        password: "",
+                    },
+                });
+            }
+
         } else {
-            // errorNotify();
             setInputVal((preValue) => {
                 return {
                     ...preValue,

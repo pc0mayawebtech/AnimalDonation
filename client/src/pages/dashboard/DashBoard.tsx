@@ -6,11 +6,19 @@ import { useNavigate } from "react-router-dom";
 import axios from "axios";
 
 const DashboardPage = () => {
+    const navigate = useNavigate();
+
+    const token = localStorage.getItem('token');
+    console.log('heytoken', token);
+
+    useEffect(() => {
+        if (!token) {
+            navigate('/login');
+        }
+    }, [token, navigate]);
 
     const [dbData, setDBData] = useState([]);
     const [isView, setIsView] = useState(false);
-
-    const navigate = useNavigate();
 
     const sendData = (text) => {
         return navigate('/description', { state: { text } });
@@ -21,7 +29,6 @@ const DashboardPage = () => {
             const response = await axios.get('http://localhost:8000/dashboard');
             setDBData(response.data.users);
             console.log('dbData', response.data.users);
-
         } catch (error) {
             console.log('dbError', error);
         }
@@ -56,15 +63,18 @@ const DashboardPage = () => {
             </aside>
             <main className="main-content">
                 <div className="cover-photo">
-                    <button className="change-cover">Logout</button>
+                    <button className="change-cover" onClick={() => {
+                        localStorage.removeItem('token');
+                        navigate('/login');
+                    }}>Logout</button>
                 </div>
                 <div className="dashboard">
                     <div className="dashboard-header">
                         <h1 className="mainHeading">Contact Dashboard</h1>
                     </div>
 
-                    {
-                        isView && <table className="table table-responsive table-striped">
+                    {isView && (
+                        <table className="table table-responsive table-striped">
                             <thead>
                                 <tr>
                                     <th className="text-center">Name</th>
@@ -74,21 +84,17 @@ const DashboardPage = () => {
                                 </tr>
                             </thead>
                             <tbody>
-                                {
-                                    dbData && dbData.map((item) => {
-                                        return (
-                                            <tr key={item.email}>
-                                                <td className="text-center">{item.name}</td>
-                                                <td className="text-center">{item.email}</td>
-                                                <td className="text-center">{renderCellContent(item.subject)}</td>
-                                                <td className="text-center">{renderCellContent(item.yourMessage)}</td>
-                                            </tr>
-                                        )
-                                    })
-                                }
+                                {dbData.map((item) => (
+                                    <tr key={item.email}>
+                                        <td className="text-center">{item.name}</td>
+                                        <td className="text-center">{item.email}</td>
+                                        <td className="text-center">{renderCellContent(item.subject)}</td>
+                                        <td className="text-center">{renderCellContent(item.yourMessage)}</td>
+                                    </tr>
+                                ))}
                             </tbody>
                         </table>
-                    }
+                    )}
                 </div>
             </main>
         </div>
