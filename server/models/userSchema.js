@@ -25,6 +25,11 @@ const userSchema = new mongoose.Schema({
         type: String,
         required: true,
         trim: true,
+    },
+    passwordResetToken: {
+        type: String,
+        required: true,
+        trim: true,
     }
 });
 

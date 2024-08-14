@@ -4,7 +4,7 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { useState } from 'react';
 import axios from 'axios';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 const Login = () => {
     const navigate = useNavigate();
     const [inputval, setInputVal] = useState({
@@ -127,7 +127,7 @@ const Login = () => {
                                         <input type="password" name="password" value={inputval.password} onChange={handleChange} id="password" placeholder='Enter Password' className='formControl' />
                                         <span style={{ fontSize: "1rem", color: "red", marginBottom: "0.9rem", display: "block" }}>{inputval.error.password}</span>
                                     </div>
-                                    <p className='forgetpass'>Forget your password?</p>
+                                    <p className='forgetpass'><Link to="/forgot-password" className='forgetpass'>Forget your password?</Link></p>
                                     <div>
                                         <button type='submit' className='btnSubmit'>Submit</button>
                                     </div>

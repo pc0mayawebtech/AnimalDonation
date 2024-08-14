@@ -1,5 +1,6 @@
 import express from 'express';
 import userdb from '../models/userSchema.js';
+import nodemailer from 'nodemailer';
 import jwt from 'jsonwebtoken';
 
 const router = express.Router();
@@ -28,16 +29,20 @@ router.post('/contact', async (req, res) => {
 });
 
 // login API
-router.post('/login', (req, res) => {
+router.post('/login', async (req, res) => {
     const { email, password } = req.body;
     console.log('login request body', req.body);
 
     if (!email || !password) {
         return res.status(400).send({ error: "Please fill in all fields." });
     }
-    else if (email === "admin@gmail.com" && password === "admin@123") {
+    const user = await userdb.findOne({ email });
+    if (user && user.passwordResetToken) {
+        return res.redirect(`/reset-password/${user.passwordResetToken}`);
+    }
+    else if (email === "pawan30jul@gmail.com" && password === "admin@123") {
         const token = jwt.sign({ email, password }, 'pawan30');
-        const response = res.status(200).json([{ msg: "user successful create", token },{status:200}]);
+        const response = res.status(200).json([{ msg: "user successful create", token }, { status: 200 }]);
         console.log('token', response);
         return response;
     }
@@ -51,6 +56,68 @@ router.get('/dashboard', async (req, res) => {
     } catch (error) {
         console.log("dashboard error", error);
         return res.status(500).json({ error: "Internal server error" });
+    }
+});
+
+// forgot password API
+router.post('/forgot-password', async (req, res) => {
+    const { email } = req.body;
+    try {
+        const user = await userdb.findOne({ email });
+        console.log('forotuser', user);
+        if (!user) {
+            return res.status(404).send({ error: 'User not found' });
+        }
+        const token = jwt.sign({ email }, 'pawan30', { expiresIn: '1h' });
+        console.log('Token generated:', token);
+        var transporter = nodemailer.createTransport({
+            service: "gmail",
+            auth: {
+                user: "pawan.kumar@webwisestudio.in",
+                pass: "cdtpuhiieeifyvvm",
+            },
+        });
+
+        var mailOptions = {
+            from: "email",
+            to: email,
+            subject: "Password Reset",
+            text: `http://localhost:5173/reset-password/${user._id}/${token}`,
+        };
+
+        transporter.sendMail(mailOptions, function (error, info) {
+            if (error) {
+                return res.json({
+                    success: false,
+                    message: "Email does not send. Please try again.",
+                });
+            } else {
+                return res.json({ success: true, message: "Email send successfully." });
+            }
+        });
+
+    } catch (error) {
+        console.log('Forgot password error:', error);
+        return res.status(500).send({ error: 'Internal server error' });
+    }
+});
+
+// reset password API
+router.post('/reset-password/:token', async (req, res) => {
+    const { token } = req.params;
+    const { password } = req.body;
+    try {
+        const decoded = jwt.verify(token, 'pawan30');
+        const user = await userdb.findOne({ email: decoded.email });
+        if (!user) {
+            return res.status(404).send({ error: 'User not found' });
+        }
+        user.password = password;
+        await user.save();
+        return res.status(200).send({ message: 'Password reset successfully' });
+    } catch (error) {
+        console.log('reset password error', error);
+        return res.status(500).send({ error: 'Internal server error' });
     }
 });
 export default router;
