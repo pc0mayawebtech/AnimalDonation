@@ -1,5 +1,9 @@
 import { useState } from 'react';
 import './ResetPassword.css';
+import axios from 'axios';
+import { useNavigate, useParams } from 'react-router-dom';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 type Errors = {
     password?: string;
@@ -7,6 +11,8 @@ type Errors = {
 };
 
 const ResetPassword = () => {
+    const navigate = useNavigate();
+    const { id, token } = useParams();
     const [password, setPassword] = useState('');
     const [confirmPassword, setConfirmPassword] = useState('');
     const [errors, setErrors] = useState<Errors>({});
@@ -16,35 +22,55 @@ const ResetPassword = () => {
         return re.test(password);
     };
 
-    const handleSubmit = (e: { preventDefault: () => void; }) => {
+    const handleSubmit = async (e: { preventDefault: () => void; }) => {
         e.preventDefault();
-        let flag = true;
+        let isValid = true;
         const validationErrors: Errors = {};
 
         if (!password) {
             validationErrors.password = "Password should not be empty.";
-            flag = false;
+            isValid = false;
         } else if (!validatePassword(password)) {
-            validationErrors.password = "Password must be at least 8 characters long, with an uppercase letter, a lowercase letter, a number, and a special character.";
-            flag = false;
+            validationErrors.password = "Password is not strong enough.";
+            isValid = false;
         }
 
         if (!confirmPassword) {
             validationErrors.confirmPassword = "Confirm Password should not be empty.";
-            flag = false;
-        } else if (!validatePassword(confirmPassword)) {
-            validationErrors.confirmPassword = "Confirm Password must meet the same criteria as the password.";
-            flag = false;
+            isValid = false;
         } else if (password !== confirmPassword) {
             validationErrors.confirmPassword = "Passwords do not match.";
-            flag = false;
+            isValid = false;
         }
 
-        if (flag) {
-            console.log('Password has been reset.');
-        }
-        else {
+        if (isValid) {
+            console.log(id, token)
+            try {
+                const response = await axios.post(`http://localhost:8000/reset-password/${id}/${token}`, {
+                    password: password,
+                });
+                console.log('pawan', response.data);
+                toast.success('Password reset successfully', {
+                    position: "top-right",
+                    autoClose: 5000,
+                    pauseOnHover: true,
+                });
+                setPassword('');
+                setConfirmPassword('');
+                setErrors({});
+                navigate('/login');
+
+            } catch (error) {
+                console.error("Error in resetting password", error);
+                toast.error('Something went wrong', {
+                    position: "top-right",
+                    autoClose: 5000,
+                    pauseOnHover: true,
+                });
+            }
+        } else {
             setErrors(validationErrors);
+            console.log("Validation errors in reset password");
         }
     };
 
@@ -81,6 +107,7 @@ const ResetPassword = () => {
                     </button>
                 </form>
             </div>
+            <ToastContainer />
         </div>
     );
 };

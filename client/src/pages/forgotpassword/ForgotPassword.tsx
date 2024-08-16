@@ -3,6 +3,7 @@ import './ForgotPassword.css';
 import { useNavigate } from 'react-router-dom';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import axios from 'axios';
 
 const ForgotPassword = () => {
     const navigate = useNavigate();
@@ -14,8 +15,13 @@ const ForgotPassword = () => {
         return re.test(String(email).toLowerCase());
     };
 
-    const handleSubmit = (e: { preventDefault: () => void; }) => {
+    const handleSubmit = async (e: { preventDefault: () => void; }) => {
         const notify = () => toast.success('Please check your email', {
+            position: "top-right",
+            autoClose: 5000,
+            pauseOnHover: true,
+        });
+        const errorNotify = () => toast.error('something is wrong', {
             position: "top-right",
             autoClose: 5000,
             pauseOnHover: true,
@@ -30,15 +36,28 @@ const ForgotPassword = () => {
 
 
         if (flag) {
-            notify();
-            setEmail('');
-            setError('');
-            navigate('/login');
-            console.log(`Password reset link sent to ${email}`);
+            try {
+                const response = await axios.post('http://localhost:8000/forgot-password', {
+                    email: email,
+                }, {
+                    headers: {
+                        'Content-Type': 'application/json',
+                    }
+                });
+                console.log(response.data);
+                console.log(`Password reset link sent to ${email}`);
+                notify();
+                setEmail('');
+                setError('');
+                navigate('/login');
+            } catch (error) {
+                console.log("error in forgetPassword", error);
+                errorNotify();
+            }
         }
         else {
             console.log('something is wrong');
-
+            setError('');
         }
     };
 

@@ -2,6 +2,7 @@ import express from 'express';
 import userdb from '../models/userSchema.js';
 import nodemailer from 'nodemailer';
 import jwt from 'jsonwebtoken';
+import bcrypt from 'bcrypt';
 
 const router = express.Router();
 
@@ -68,7 +69,7 @@ router.post('/forgot-password', async (req, res) => {
         if (!user) {
             return res.status(404).send({ error: 'User not found' });
         }
-        const token = jwt.sign({ email }, 'pawan30', { expiresIn: '1h' });
+        const token = jwt.sign({ id: user._id }, 'pawan30', { expiresIn: '1h' });
         console.log('Token generated:', token);
         var transporter = nodemailer.createTransport({
             service: "gmail",
@@ -103,20 +104,35 @@ router.post('/forgot-password', async (req, res) => {
 });
 
 // reset password API
-router.post('/reset-password/:token', async (req, res) => {
-    const { token } = req.params;
+router.post('/reset-password/:id/:token', async (req, res) => {
+    const { id, token } = req.params;
     const { password } = req.body;
+    console.log(id, token, 'toekb')
     try {
+        // Verify the token
         const decoded = jwt.verify(token, 'pawan30');
-        const user = await userdb.findOne({ email: decoded.email });
+        console.log(decoded)
+        if (decoded.id !== id) {
+            console.log("decode errror")
+            return res.status(400).send({ error: 'Invalid token or ID' });
+        }
+
+        // Find the user by ID
+        const user = await userdb.findById(id);
         if (!user) {
             return res.status(404).send({ error: 'User not found' });
         }
-        user.password = password;
+
+        // Hash the new password
+        const hashedPassword = await bcrypt.hash(password, 10);
+
+        // Update the user's password and save
+        user.password = hashedPassword;
         await user.save();
+
         return res.status(200).send({ message: 'Password reset successfully' });
     } catch (error) {
-        console.log('reset password error', error);
+        console.error('reset password error', error);
         return res.status(500).send({ error: 'Internal server error' });
     }
 });

@@ -27,7 +27,7 @@ const App = () => {
           <Route path='/dashboard' element={<Dashboard />} />
           <Route path="/description" element={<Description />} />
           <Route path='/forgot-password' element={<ForgotPassword />} />
-          <Route path='/reset-password' element={<ResetPassword />} />
+          <Route path='/reset-password/:id/:token' element={<ResetPassword />} />
         </Routes>
       </div>
     </>

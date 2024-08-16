@@ -26,11 +26,6 @@ const userSchema = new mongoose.Schema({
         required: true,
         trim: true,
     },
-    passwordResetToken: {
-        type: String,
-        required: true,
-        trim: true,
-    }
 });
 
 const userdb = new mongoose.model("contact", userSchema);

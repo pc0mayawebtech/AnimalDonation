@@ -10,6 +10,7 @@ import puupylogo from '../../assets/Images/choosepuppylogo.jpg';
 import ExpertTeam from './expertteam/ExpertTeam';
 import Footer from '../../components/footer/Footer';
 import FAQ from '../service/faq/FAQ';
+import CountUp from 'react-countup';
 
 const Home = () => {
     return (
@@ -88,7 +89,7 @@ const Home = () => {
                                                 <img src={rescuehome} alt="rescuehome" loading='lazy' className='animalresuceHome' />
                                                 <div className='contentbox'>
                                                     <div className='number-wrapper'>
-                                                        <span className='mx-1'>16,789</span>
+                                                        <CountUp className='mx-1' start={0} end={1020} duration={10} enableScrollSpy={true} scrollSpyOnce={true} />
                                                         <span className='incremnetRescue'>+</span>
                                                     </div>
                                                     <h2 className='contentTitle'>Successful Rescue</h2>
